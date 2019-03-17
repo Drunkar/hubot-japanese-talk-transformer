@@ -19,7 +19,7 @@ module.exports = (robot) ->
         # 文末にクエスチョンマークをつけてメンションすると返答
         #
 
-        console.log "fetching..."
+        console.log "fetching..." + TALK_API_SERVER
         keyword = msg.match[1] + "？"
         console.log(keyword)
         request = msg.http(TALK_API_SERVER)
