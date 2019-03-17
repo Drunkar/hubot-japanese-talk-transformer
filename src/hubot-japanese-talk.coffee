@@ -32,7 +32,7 @@ module.exports = (robot) ->
                 console.log("done.")
                 json = JSON.parse body
                 console.log(json)
-                if "outputs" in json
+                if json["outputs"]
                     index = weightedRandomChoice(json.outputs[0].score)
                     message = json.outputs[0].val[index]
                 else
@@ -61,7 +61,7 @@ module.exports = (robot) ->
                     else
                         console.log("done.")
                         json = JSON.parse body
-                        if "outputs" in json
+                        if json["outputs"]
                             index = weightedRandomChoice(json.outputs[0].score)
                             message = json.outputs[0].val[index]
                         else
