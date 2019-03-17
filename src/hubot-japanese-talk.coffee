@@ -5,7 +5,7 @@
 ##   hubot --?
 
 
-if typeof process.env.HUBOT_JP_TALK_API_SERVER === "undefined"
+if typeof process.env.HUBOT_JP_TALK_API_SERVER == "undefined"
     TALK_API_SERVER = "localhost:5000"
 else
     TALK_API_SERVER = process.env.HUBOT_JP_TALK_API_SERVER
@@ -74,7 +74,7 @@ weightedRandomChoice = (weights) ->
     # input example: [0.8, 0.4, 0.9, 0.2]
     min = Math.min.apply(null, weights)
     sumOfWeights = 0
-    for each weight in weights
+    for weight in weights
         sumOfWeights += weight - min
     randomWeight = rand(1, sumOfWeights)
     for i in [0..weights.length]
