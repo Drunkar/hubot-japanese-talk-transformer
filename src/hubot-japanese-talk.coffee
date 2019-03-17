@@ -76,7 +76,7 @@ weightedRandomChoice = (weights) ->
     sumOfWeights = 0
     for weight in weights
         sumOfWeights += weight - min
-    randomWeight = rand(1, sumOfWeights)
+    randomWeight = Math.random() * sumOfWeights
     for i in [0..weights.length]
         randomWeight = randomWeight - (weights[i] - min)
         if randomWeight <= 0
