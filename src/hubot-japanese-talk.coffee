@@ -23,7 +23,7 @@ module.exports = (robot) ->
         keyword = msg.match[1] + "？"
         console.log(keyword)
         request = msg.http(TALK_API_SERVER)
-                          .query(q: keyword)
+                          .query(input: keyword)
                           .get()
         request (err, res, body) ->
             if err
@@ -53,7 +53,7 @@ module.exports = (robot) ->
                 console.log "fetching..."
                 console.log(keyword)
                 request = msg.http(TALK_API_SERVER)
-                                  .query(q: keyword)
+                                  .query(input: keyword)
                                   .get()
                 request (err, res, body) ->
                     if err
