@@ -6,7 +6,7 @@
 
 
 if typeof process.env.HUBOT_JP_TALK_API_SERVER == "undefined"
-    TALK_API_SERVER = "localhost:5000"
+    TALK_API_SERVER = "http://localhost:5000"
 else
     TALK_API_SERVER = process.env.HUBOT_JP_TALK_API_SERVER
 ERROR_MESSAGE = "エラーっぽい"
@@ -50,7 +50,7 @@ module.exports = (robot) ->
         if respond == 10
             keyword = msg.match[1]
             if keyword.indexOf("@") == -1
-                console.log "fetching..."
+                console.log "fetching..." + TALK_API_SERVER
                 console.log(keyword)
                 request = msg.http(TALK_API_SERVER)
                                   .query(input: keyword)
