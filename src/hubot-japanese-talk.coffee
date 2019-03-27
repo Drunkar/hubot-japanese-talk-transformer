@@ -14,9 +14,9 @@ ERROR_MESSAGE = "エラーっぽい"
 
 module.exports = (robot) ->
 
-    robot.respond /(.*)(\?|？)$/i, (msg) ->
+    robot.respond /(.*)/i, (msg) ->
         #
-        # 文末にクエスチョンマークをつけてメンションすると返答
+        # メンションすると返答
         #
 
         console.log "fetching..." + TALK_API_SERVER
